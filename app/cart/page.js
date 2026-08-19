@@ -24,14 +24,18 @@ export default function CartPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8">Your Cart 🛒</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">Your Cart</h1>
 
       <div className="space-y-4">
         {items.map(item => (
           <div key={item.id} className="bg-white rounded-2xl shadow-md p-4 flex items-center gap-4">
             {/* Item Image */}
-            <div className={`${item.color} w-20 h-20 rounded-xl flex items-center justify-center flex-shrink-0`}>
-              <span className="text-4xl">{item.emoji}</span>
+            <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Item Info */}

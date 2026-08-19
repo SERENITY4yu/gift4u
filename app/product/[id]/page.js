@@ -38,8 +38,12 @@ export default function ProductPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
         {/* Product Image */}
-        <div className={`${product.color} rounded-3xl h-80 md:h-96 flex items-center justify-center`}>
-          <span className="text-9xl">{product.emoji}</span>
+        <div className="rounded-3xl overflow-hidden h-80 md:h-96">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Product Info */}
@@ -81,7 +85,7 @@ export default function ProductPage() {
                 : 'bg-coral hover:bg-red-500 text-white hover:shadow-lg'
             }`}
           >
-            {added ? '✓ Added to Cart!' : 'Add to Cart 🛒'}
+            {added ? '✓ Added to Cart!' : 'Add to Cart'}
           </button>
 
           <button

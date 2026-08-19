@@ -22,10 +22,16 @@ export default function CategoryPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Category Header */}
-      <div className={`${category.color} rounded-3xl p-8 mb-8 text-center`}>
-        <span className="text-6xl block mb-4">{category.emoji}</span>
-        <h1 className="text-3xl font-bold text-gray-800">{category.name}</h1>
-        <p className="text-gray-600 mt-2">{category.description}</p>
+      <div className="relative rounded-3xl overflow-hidden mb-8 h-48">
+        <img
+          src={category.image}
+          alt={category.name}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white">
+          <h1 className="text-4xl font-bold">{category.name}</h1>
+          <p className="mt-2 text-lg opacity-90">{category.description}</p>
+        </div>
       </div>
 
       {/* Products Grid */}

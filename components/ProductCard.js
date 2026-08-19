@@ -8,9 +8,16 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-      <div className={`${product.color} h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}>
-        <span className="text-7xl">{product.emoji}</span>
+      {/* Product Image */}
+      <div className="h-48 overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
       </div>
+
+      {/* Product Info */}
       <div className="p-4">
         <Link href={`/product/${product.id}`}>
           <h3 className="text-lg font-semibold text-gray-800 hover:text-coral transition">{product.name}</h3>
